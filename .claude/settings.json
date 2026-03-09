@@ -1,4 +1,55 @@
 {
+  "permissions": {
+    "allow": [
+      "Read",
+      "Edit",
+      "Write",
+      "Glob",
+      "Grep",
+      "Bash(git status*)",
+      "Bash(git log*)",
+      "Bash(git diff*)",
+      "Bash(git show*)",
+      "Bash(git branch*)",
+      "Bash(git checkout*)",
+      "Bash(git switch*)",
+      "Bash(git add*)",
+      "Bash(git commit*)",
+      "Bash(git merge*)",
+      "Bash(git rebase*)",
+      "Bash(git fetch*)",
+      "Bash(git pull*)",
+      "Bash(git push*)",
+      "Bash(git stash*)",
+      "Bash(git tag*)",
+      "Bash(git rev-parse*)",
+      "Bash(git config --get*)",
+      "Bash(git config --list*)",
+      "Bash(git remote*)",
+      "Bash(git symbolic-ref*)",
+      "Bash(git flow*)",
+      "Bash(ls*)",
+      "Bash(du*)",
+      "Bash(wc*)",
+      "Bash(cat*)",
+      "Bash(head*)",
+      "Bash(tail*)"
+    ],
+    "deny": [
+      "Bash(git rm*)",
+      "Bash(git clean*)",
+      "Bash(git reset --hard*)",
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
+      "Bash(git branch -D*)",
+      "Bash(git branch -d*)",
+      "Bash(git checkout -- .)",
+      "Bash(git restore .)",
+      "Bash(rm *)",
+      "Bash(rm -rf*)",
+      "Bash(rmdir*)"
+    ]
+  },
   "extraKnownMarketplaces": {
     "nx-claude-plugins": {
       "source": {
