@@ -2,5 +2,18 @@
   "extends": "./tsconfig.base.json",
   "compileOnSave": false,
   "files": [],
-  "references": []
+  "references": [
+    {
+      "path": "./apps/radix-showcase-e2e"
+    },
+    {
+      "path": "./apps/radix-showcase"
+    },
+    {
+      "path": "./libs/ui-radix"
+    },
+    {
+      "path": "./libs/ui-mui"
+    }
+  ]
 }

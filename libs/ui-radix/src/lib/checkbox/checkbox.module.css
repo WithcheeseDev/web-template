@@ -1,0 +1,45 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.root {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-border-strong);
+  background-color: var(--color-surface-elevated);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.root:hover {
+  border-color: var(--color-secondary);
+}
+
+.root[data-state='checked'] {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.root:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+.indicator {
+  color: var(--color-text-inverse);
+  font-size: 12px;
+  line-height: 1;
+}
+
+.label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  cursor: pointer;
+  user-select: none;
+}

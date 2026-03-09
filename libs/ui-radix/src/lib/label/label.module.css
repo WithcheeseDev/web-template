@@ -1,0 +1,10 @@
+.root {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  user-select: none;
+}
+
+.required {
+  color: var(--color-error);
+}

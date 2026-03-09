@@ -1,12 +1,12 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
-      "default"
+      "default",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/tsconfig.spec.json",
+      "!{projectRoot}/src/test-setup.[jt]s"
     ],
     "sharedGlobals": []
   },
@@ -24,7 +24,45 @@
           "watchDepsName": "watch-deps"
         }
       }
+    },
+    {
+      "plugin": "@nx/vite/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "testTargetName": "test",
+        "serveTargetName": "serve",
+        "devTargetName": "dev",
+        "previewTargetName": "preview",
+        "serveStaticTargetName": "serve-static",
+        "typecheckTargetName": "typecheck",
+        "buildDepsTargetName": "build-deps",
+        "watchDepsTargetName": "watch-deps"
+      }
+    },
+    {
+      "plugin": "@nx/playwright/plugin",
+      "options": {
+        "targetName": "e2e"
+      }
     }
   ],
-  "nxCloudId": "69af15464497f5b74b209ded"
+  "nxCloudId": "69af15464497f5b74b209ded",
+  "generators": {
+    "@nx/react": {
+      "application": {
+        "babel": true,
+        "style": "css",
+        "linter": "none",
+        "bundler": "vite"
+      },
+      "component": {
+        "style": "css"
+      },
+      "library": {
+        "style": "css",
+        "linter": "none",
+        "unitTestRunner": "none"
+      }
+    }
+  }
 }

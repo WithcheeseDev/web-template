@@ -1,0 +1,67 @@
+.viewport {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-6);
+  width: 390px;
+  max-width: 100vw;
+  margin: 0;
+  list-style: none;
+  z-index: 2000;
+  outline: none;
+}
+
+.root {
+  background-color: var(--color-surface-elevated);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-4);
+  display: grid;
+  grid-template-areas: 'title action' 'description action';
+  grid-template-columns: auto max-content;
+  gap: var(--space-1);
+  align-items: center;
+  border: 1px solid var(--color-border);
+}
+
+.root[data-state='open'] {
+  animation: toastSlideIn var(--transition-slow);
+}
+
+.root[data-state='closed'] {
+  animation: fadeOut var(--transition-fast);
+}
+
+.root[data-swipe='move'] {
+  transform: translateX(var(--radix-toast-swipe-move-x));
+}
+
+.root[data-swipe='cancel'] {
+  transform: translateX(0);
+  transition: transform var(--transition-base);
+}
+
+.root[data-swipe='end'] {
+  animation: toastSwipeOut var(--transition-base);
+}
+
+.title {
+  grid-area: title;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+}
+
+.description {
+  grid-area: description;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.action {
+  grid-area: action;
+}

@@ -1,9 +1,9 @@
 # See https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
 # compiled output
-dist
+**/dist/
 tmp
-out-tsc
+**/out-tsc/
 
 # dependencies
 node_modules
@@ -27,7 +27,6 @@ node_modules
 # misc
 /.sass-cache
 /connect.lock
-/coverage
 /libpeerconnection.log
 npm-debug.log
 yarn-error.log
@@ -35,10 +34,25 @@ testem.log
 /typings
 
 # System Files
-.DS_Store
+**/.DS_Store
 Thumbs.db
 
 .nx/cache
 .nx/workspace-data
-.cursor/rules/nx-rules.mdc
 .github/instructions/nx.instructions.md
+
+vite.config.*.timestamp*
+
+# ── Security & Vulnerability ─────────────────────────
+# .claude/
+
+# ── Performance (Large / Auto-generated) ─────────────
+**/coverage/
+*.tsbuildinfo
+playwright-report/
+test-output
+pnpm-lock.yaml
+
+# ── OS & IDE ──────────────────────────────────────────
+.cursor/
+opencode.json
