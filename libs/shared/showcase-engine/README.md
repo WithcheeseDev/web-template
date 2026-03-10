@@ -1,7 +1,22 @@
-# @org/showcase-engine
+# @web-templates/showcase-engine
 
-This library was generated with [Nx](https://nx.dev).
+Prop editor controls and code generation engine. Controls use native HTML + Tailwind only (no Radix/MUI) to avoid circular dependencies.
 
-## Running unit tests
+## Public API
 
-Run `nx test @org/showcase-engine` to execute the unit tests via [Vitest](https://vitest.dev/).
+| Export | Description |
+|--------|-------------|
+| `PropEditorEngine` | React component that reads `PropSchema[]`, groups by `group` field, renders type-appropriate controls |
+| `generateCode()` | Calls a provider's code template function with current props, returns formatted string |
+| `CodeTemplateFunction` | Type for code template functions: `(props) => string` |
+
+## Controls
+
+| Control | Schema Type | Element |
+|---------|------------|---------|
+| `StringControl` | `string` | `<input type="text">` |
+| `NumberControl` | `number` | `<input type="number">` + stepper buttons |
+| `BooleanControl` | `boolean` | Toggle switch (`<button>` with sliding dot) |
+| `SelectControl` | `select` | `<select>` dropdown |
+| `ColorControl` | `color` | Color swatch buttons |
+| `RangeControl` | `range` | `<input type="range">` with value display |

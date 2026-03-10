@@ -1,7 +1,10 @@
-# @org/utils
+# @web-templates/utils
 
-This library was generated with [Nx](https://nx.dev).
+Shared utility functions.
 
-## Running unit tests
+## Public API
 
-Run `nx test @org/utils` to execute the unit tests via [Vitest](https://vitest.dev/).
+| Export | Description |
+|--------|-------------|
+| `cn(...inputs)` | Merges class names using `clsx` + `tailwind-merge` |
+| `copyToClipboard(text)` | Async clipboard write with `execCommand` fallback, returns `boolean` |
