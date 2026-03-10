@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node --version && npm --version && pnpm --version 2>/dev/null || echo \"pnpm not found\")",
+      "Bash(npx nx:*)",
+      "Bash(cd /Users/2203622/Documents/cusotm-projects && npx create-nx-workspace@22.5.2 web-templates-temp --preset=react-monorepo --appName=showcase --style=css --bundler=vite --pm=pnpm --nxCloud=skip --e2eTestRunner=none 2>&1)",
+      "Bash(cd /Users/2203622/Documents/cusotm-projects && rsync -a --exclude='.git' web-templates-temp/ web-templates/ && rm -rf web-templates-temp)"
+    ]
+  }
+}
