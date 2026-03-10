@@ -7,7 +7,12 @@ interface RadixProviderProps {
 
 export function RadixProvider({ children }: RadixProviderProps) {
   return (
-    <Theme appearance="dark" accentColor="indigo" radius="medium">
+    <Theme
+      appearance="dark"
+      accentColor="indigo"
+      radius="medium"
+      hasBackground={false}
+    >
       {children}
     </Theme>
   );
