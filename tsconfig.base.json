@@ -5,17 +5,24 @@
     "emitDeclarationOnly": true,
     "importHelpers": true,
     "isolatedModules": true,
-    "lib": ["es2022"],
+    "jsx": "react-jsx",
+    "lib": ["es2022", "dom", "dom.iterable"],
     "module": "esnext",
     "moduleResolution": "bundler",
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
-    "noUnusedLocals": true,
     "skipLibCheck": true,
     "strict": true,
     "target": "es2022",
-    "customConditions": ["@org/source"]
+    "baseUrl": ".",
+    "paths": {
+      "@web-templates/contracts": ["libs/shared/contracts/src/index.ts"],
+      "@web-templates/ui-radix": ["libs/providers/radix/src/index.ts"],
+      "@web-templates/ui-mui": ["libs/providers/mui/src/index.ts"],
+      "@web-templates/showcase-engine": ["libs/shared/showcase-engine/src/index.ts"],
+      "@web-templates/utils": ["libs/shared/utils/src/index.ts"]
+    }
   }
 }
