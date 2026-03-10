@@ -12,6 +12,7 @@ export function RadixProvider({ children }: RadixProviderProps) {
       accentColor="indigo"
       radius="medium"
       hasBackground={false}
+      style={{ minHeight: 'auto' }}
     >
       {children}
     </Theme>

@@ -24,4 +24,16 @@ describe('RadixProvider', () => {
     expect(themeDiv).toBeInTheDocument();
     expect(themeDiv).not.toHaveAttribute('data-has-background', 'true');
   });
+
+  it('overrides min-height to prevent 100vh stretching from root theme styles', () => {
+    const { container } = render(
+      <RadixProvider>
+        <span>Content</span>
+      </RadixProvider>,
+    );
+
+    const themeDiv = container.querySelector('.radix-themes') as HTMLElement;
+    expect(themeDiv).toBeInTheDocument();
+    expect(themeDiv.style.minHeight).toBe('auto');
+  });
 });
